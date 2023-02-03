@@ -11,6 +11,17 @@ struct NotificationListView: View {
     @StateObject private var notificationManager = NotificationManager()
     @State private var isCreatePresented = false
     
+    private static var notificationDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
+    
+    private func timeDisplayText(from notification: UNNotificationRequest) -> String {
+        guard let nextTriggerDate = (notification.trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate() else { return "" }
+        return Self.notificationDateFormatter.string(from: nextTriggerDate)
+    }
+    
     @ViewBuilder
     var infoOverlayView: some View {
         switch notificationManager.authorizationStatus {
@@ -43,9 +54,15 @@ struct NotificationListView: View {
     }
     
     var body: some View {
-        List(notificationManager.notifications, id: \.identifier) { notification in
-            Text(notification.content.title)
-                .fontWeight(.semibold)
+        List {
+            ForEach(notificationManager.notifications, id: \.identifier) { notification in
+                HStack {
+                    Text(notification.content.title).fontWeight(.semibold)
+                    Spacer()
+                    Text(timeDisplayText(from: notification)).fontWeight(.bold)
+                }  
+            }
+            .onDelete(perform: delete)
         }
         .listStyle(InsetGroupedListStyle())
         .overlay(infoOverlayView)
@@ -62,6 +79,9 @@ struct NotificationListView: View {
                 break 
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            notificationManager.reloadAuthorizationStatus()
+        }
         .navigationBarItems(trailing: Button {
             isCreatePresented = true
         } label: {
@@ -77,6 +97,15 @@ struct NotificationListView: View {
             .accentColor(.primary)
         }
         
+    }
+}
+
+extension NotificationListView {
+    func delete(_ indexSet: IndexSet) {
+        notificationManager.deleteLocalNotifications(identifiers: indexSet.map {
+            notificationManager.notifications[$0].identifier 
+        })
+        notificationManager.reloadLocalNotifications()
     }
 }
 
