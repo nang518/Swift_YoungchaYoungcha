@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZE-le-8JF">
+                                <rect key="frame" x="96.666666666666686" y="109" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="BO3-LO-MbO"/>
+                                    <constraint firstAttribute="height" constant="200" id="kks-Fo-REC"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="button_play"/>
+                                <state key="selected" image="button_pause"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EGV-93-sgn">
+                                <rect key="frame" x="14" y="366" width="365" height="31"/>
+                                <color key="minimumTrackTintColor" systemColor="systemBrownColor"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mV4-6R-5dg">
+                                <rect key="frame" x="158.66666666666666" y="329" width="76" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mV4-6R-5dg" firstAttribute="top" secondItem="UZE-le-8JF" secondAttribute="bottom" constant="20" id="2Iz-l7-Lil"/>
+                            <constraint firstItem="EGV-93-sgn" firstAttribute="top" secondItem="mV4-6R-5dg" secondAttribute="bottom" constant="16" id="7Ok-JX-3zc"/>
+                            <constraint firstItem="EGV-93-sgn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8G4-UP-eWs"/>
+                            <constraint firstItem="EGV-93-sgn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Bpn-Tp-c64"/>
+                            <constraint firstItem="mV4-6R-5dg" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Egj-mg-2V1"/>
+                            <constraint firstItem="EGV-93-sgn" firstAttribute="top" secondItem="mV4-6R-5dg" secondAttribute="bottom" constant="16" id="JFn-jB-Jkm"/>
+                            <constraint firstItem="UZE-le-8JF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="LkE-Ad-ufz"/>
+                            <constraint firstItem="EGV-93-sgn" firstAttribute="top" secondItem="mV4-6R-5dg" secondAttribute="bottom" constant="20" id="VVB-eb-lj0"/>
+                            <constraint firstItem="UZE-le-8JF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="aoh-kw-qh8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EGV-93-sgn" secondAttribute="trailing" constant="16" id="k52-jc-pWc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_pause" width="185" height="185"/>
+        <image name="button_play" width="187" height="189"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
