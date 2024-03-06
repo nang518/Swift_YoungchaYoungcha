@@ -59,10 +59,10 @@
 				B7B45F872B9710F3006AB2E5 /* AppDelegate.swift */,
 				B7B45F892B9710F3006AB2E5 /* SceneDelegate.swift */,
 				B7B45F8B2B9710F3006AB2E5 /* ViewController.swift */,
-				B7B45F8D2B9710F4006AB2E5 /* Main.storyboard */,
 				B7B45F902B9710F7006AB2E5 /* Assets.xcassets */,
 				B7B45F922B9710F7006AB2E5 /* LaunchScreen.storyboard */,
 				B7B45F952B9710F7006AB2E5 /* Info.plist */,
+				B7B45F8D2B9710F4006AB2E5 /* Main.storyboard */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
