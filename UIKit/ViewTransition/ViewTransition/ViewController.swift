@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  SignUp
+//  ViewTransition
 //
-//  Created by 정나영 on 3/6/24.
+//  Created by 정나영 on 3/13/24.
 //
 
 import UIKit
@@ -16,5 +16,4 @@ class ViewController: UIViewController {
 
 
 }
-
 
